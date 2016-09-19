@@ -5,9 +5,14 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap"
 @import "bsCustom"
 @import "footer"
+@import "base"
 
 /* the darken background */
 $bg: #B93A32
+$navBackgroundColor: #D1F8A1
+
+*
+  outline: 0 !important
 
 body
   background-color: $bg
@@ -15,7 +20,7 @@ body
 
 /* load a custom font */
 @font-face
-  src: url(Dyslexie.ttf)
+  src: url(../fonts/Dyslexie.ttf)
   font-family: "dyslexie"
 
 /* display the bootstrap page only */
@@ -58,3 +63,14 @@ pre
     transform: translateY(100vh)
     opacity: 5%
     display: none
+
+#btnHome
+  position: fixed
+  z-index: 99999
+  border-radius: 5em
+  bottom: 3em
+  right: 2em
+
+  a
+    color: $navBackgroundColor !important
+    font-size: 1.25em

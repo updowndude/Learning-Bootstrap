@@ -1,17 +1,17 @@
-const gulp = require('gulp');
-const livereload = require('gulp-livereload');
-const sass = require('gulp-ruby-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const csswring = require('csswring');
-const compiler = require('google-closure-compiler').gulp();
+import gulp from 'gulp';
+import livereload from 'gulp-livereload';
+import sass from 'gulp-ruby-sass';
+import sourcemaps from 'gulp-sourcemaps';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import csswring from 'csswring';
+import webpack from 'gulp-webpack';
 
 gulp.task('sass', () => {
 	const processors = [
 		autoprefixer,
 		csswring
-	 ];
+	];
 
 	return sass('sass/myStyle.sass')
     .on('error', sass.logError)
@@ -26,19 +26,30 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-  return gulp.src('./js/*.js', {base: './'})
-      .pipe(compiler({
-					compilation_level: 'SIMPLE',
-          language_in: 'ECMASCRIPT8',
-          language_out: 'ECMASCRIPT5_STRICT',
-          js_output_file: 'my-com.js'
-        }))
-      .pipe(gulp.dest('./public/dist'))
-			.pipe(livereload());
+	return gulp.src('js/bob.js')
+		.pipe(sourcemaps.init())
+		.pipe(webpack({
+			module: {
+				loaders: [{
+					loader: 'babel-loader',
+					exclude: /node_modules/,
+					query: {
+						presets: ['es2015', 'es2016', 'es2017'],
+						plugins: ['transform-runtime']
+					}
+				}]
+			},
+			output: {
+				filename: 'my-com.js'
+			}
+		}))
+		.pipe(sourcemaps.write('.'))
+		.pipe(gulp.dest('public/dist'))
+    .pipe(livereload());
 });
 
 gulp.task('php', () => {
-	return gulp.src('./index.html')
+	return gulp.src('./index.php')
 	.pipe(livereload());
 });
 
