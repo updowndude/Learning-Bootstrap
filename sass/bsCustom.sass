@@ -1,0 +1,37 @@
+/* customize the bootstrap compents to fit the page */
+
+$navBackgroundColore: #B93A32
+
+.nav-tabs
+  background-color: #3c4865
+
+  a:hover
+    background-color: lighten($navBackgroundColore, 5) !important
+
+  a
+    font-size: 1.3em
+
+.active a
+  background-color: #B93A32 !important
+  color: #4C6A92 !important
+
+  &:hover
+    background-color: $navBackgroundColore !important
+
+.myClass.active a
+  background-color: #cf564f !important
+
+.jumbotron
+  margin-top: 1em
+
+.well
+  letter-spacing: 0.5em
+  margin-bottom: 5em
+
+.well, .jumbotron, .panel
+  box-shadow: 7px 4px 22px 3px rgba(0, 0, 20, 0.27)
+  font-family: "dyslexie"
+
+.panel-footer div
+  @media screen and (max-width: 430px)
+    transform: translateX(-0.3em)

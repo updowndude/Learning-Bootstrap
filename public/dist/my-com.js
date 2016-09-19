@@ -1,0 +1,3 @@
+'use strict';var intClickNumber=0;
+function navClick(c){var a=document.querySelector(".badge"),e=document.querySelector(".active"),b=document.querySelectorAll("section > article"),d=document.getElementsByClassName("target");intClickNumber++;a.innerHTML=intClickNumber;e.classList.remove("active");c.classList.add("active");for(a=0;a<b.length;a++)b[a].style.display="none";2==c.classList.length?(document.body.style.backgroundColor="#cf564f",b[1].style.display="block"):(document.body.style.backgroundColor="#B93A32",b[0].style.display="block");
+d[0].classList.add("myAnim");setTimeout(function(){d[0].classList.remove("myAnim")},700)};

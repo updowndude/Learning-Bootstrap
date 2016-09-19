@@ -1,0 +1,60 @@
+@charset "UTF-8"
+
+/* by correy winke */
+/* beging in the diffrent styles to make on big file */
+@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap"
+@import "bsCustom"
+@import "footer"
+
+/* the darken background */
+$bg: #B93A32
+
+body
+  background-color: $bg
+  color: #4C6A92
+
+/* load a custom font */
+@font-face
+  src: url(Dyslexie.ttf)
+  font-family: "dyslexie"
+
+/* display the bootstrap page only */
+section > article:last-child
+  display: none
+
+pre
+  color: #4C6A92 !important
+
+/* display the code correctly */
+.myReactCode
+  white-space: pre-wrap
+
+  p
+    margin: -5.5em
+    @media screen and (max-width: 480px)
+      margin: -5.5em 0 -5.5em 0
+
+/* setup the animation */
+.myAnim
+  background: linear-gradient($bg, #fff)
+  height: 100vh
+  width: 300vh
+  position: fixed
+  z-index: 999
+  bottom: 0
+  right: 0
+  animation:
+    name: progress
+    fill-mode: forwards
+    timing-function: ease-in
+    duration: 0.7s
+    iteration-count: 1
+
+/* the what happens during the animation */
+@keyframes progress
+  0%
+    opacity: 100%
+  100%
+    transform: translateY(100vh)
+    opacity: 5%
+    display: none

@@ -1,0 +1,36 @@
+{
+  "name": "eg3",
+  "version": "0.0.1",
+  "description": "inclass overworking assigment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp & node index.js"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Correy Winke",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap-without-jquery": "^1.0.4",
+    "express": "^4.14.0",
+    "google-closure-compiler": "^20160911.0.0",
+    "postcss": "^5.1.2",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel": "^6.5.2",
+    "babel-core": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "csswring": "^5.1.0",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-ruby-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
