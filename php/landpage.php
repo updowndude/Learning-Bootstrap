@@ -173,9 +173,9 @@
       </article>
     </section>
     <!-- home button -->
-    <button id="btnHome" type="button" class="btn btn-primary"><a href="../index.php">
+    <a href="../index.php" class="btn btn-primary" role="button" id="btnHome">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-    </a></button>
+    </a>
     <!-- animation background -->
     <figure class="target">
     </figure>

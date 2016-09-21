@@ -23,18 +23,20 @@
         <div class="row">
           <div class="text-center page-header">
             <h1>Welcome</h1>
-            <h2 class="text-hide" id="myWelcomeImage">Fork me on Github</h2> 
+            <h2 class="text-hide" id="myWelcomeImage">Fork me on Github</h2>
           </div>
         </div>
         <div class="row center-block">
-          <div class="col-sm-3">
-            <button class="btn btn-danger"><a href="php/landpage.php">Land Page</a></button>
+          <div class="col-md-3">
+            <a href="php/landpage.php" class="btn btn-danger" role="button">
+              Land Page
+            </a>
           </div>
-          <div class="col-sm-3">
-            <button class="btn btn-danger"><a href="http://cwinke.btcwsd.com/php/" target="_blank">Summer Project</a></button>
+          <div class="col-md-4">
+            <a href="http://cwinke.btcwsd.com/php/" target="_blank" class="btn btn-danger" role="button">Summer Project</a>
           </div>
-          <div class="col-sm-3">
-            <button class="btn btn-danger"><a href="http://cwinke.btcwsd.com/project-03-css3%20final/" target="_blank">My Portfolio</a></button>
+          <div class="col-md-3">
+            <a href="http://cwinke.btcwsd.com/project-03-css3%20final/" target="_blank" class="btn btn-danger" role="button">My Portfolio</a>
           </div>
         </div>
       </div>
