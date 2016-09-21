@@ -85,13 +85,13 @@
 		// see what tab is currently active
 		if (element.classList.length === 2) {
 			// set the background of page
-			document.body.style.backgroundColor = '#cf564f';
+			document.body.style.backgroundImage = "url('../public/images/dkBG3.png')";
 			// display the correct the cotent
 			sectionArts[1].style.display = 'block';
 			// the other tab was clicked
 		} else {
 			// set the background of page
-			document.body.style.backgroundColor = '#B93A32';
+			document.body.style.backgroundImage = "url('../public/images/dkBG2.png')";
 			// display the correct the cotent
 			sectionArts[0].style.display = 'block';
 		}
@@ -106,9 +106,6 @@
 		}, 700);
 	}
 
-	function addButton() {}
-
-	addButton();
 	window.navClicker = navClicker;
 
 /***/ },

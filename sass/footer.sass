@@ -1,7 +1,8 @@
 @charset "UTF-8"
 
 /* font family to be resued */
-$mainTwithoutSize: 'PT Serif', serif
+\:root
+  --mainTwithoutSize: 'PT Serif', serif
 
 /* styles the footer */
 footer
@@ -9,8 +10,8 @@ footer
   position: fixed
   bottom: 0
   width: 100%
-  font: 1.2em $mainTwithoutSize
-  background: rgba(204,86,86,0.3)
+  font: 1.2em var(--mainTwithoutSize)
+  background-color: rgba(204,86,86,0.3)
   letter-spacing: 1.2em
   color:  #D1F8A1
 
@@ -19,3 +20,7 @@ footer
     font-size: 1.25em
     margin-bottom: -0.1em
     letter-spacing: 0.5em
+
+  // rucksack funcation  
+  h3
+    font-size: responsive

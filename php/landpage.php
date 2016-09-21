@@ -6,7 +6,7 @@
   <!-- info to understand the page -->
   <meta name="author" content="Correy Winke">
   <meta name="language" content="english">
-  <meta name="description" content="Help person find where to start with a topic">
+  <meta name="description" content="Bootstrap assigments">
   <meta name="abstract" content="Main page">
   <!-- mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
   <link rel="shortcut icon", type="image/x-icon", href="../public/images/favicon.ico">
   <title>Landing Page</title>
 </head>
-<body>
+<body id="myBody">
   <main>
     <nav>
       <!-- bootstrap nav in tabs -->
@@ -39,11 +39,15 @@
         <!-- jumbotron -->
         <div class="container">
           <div class="jumbotron">
-            <h1><strong>Bootstrap</strong></h1>
+            <div class="page-header">
+              <h1><strong>Bootstrap</strong></h1>
+            </div>
             <p>
               "Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
               Download Bootstrap"
-              <span class="label label-info">From Bootsrap site</span>
+              <span class="label label-info">
+                <a  href="http://getbootstrap.com/" target="_blank">From <abbr title="Bootstrap">BS</abbr> site  &nbsp; </a>
+              </span>
             </p>
           </div>
           <!-- panel and its three different parts -->
@@ -63,6 +67,18 @@
             <div class="panel-heading">Well</div>
             <div class="panel-body">&lt;div class=&quot;well&quot;&gt;&lt;/div&gt;</div>
           </div>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info active">Libraries using Bootstrap</li>
+            <li class="list-group-item list-group-item-info">
+              <a  href="http://thednp.github.io/bootstrap.native/" target="_blank">Bootstrap<mark>.Native</mark></a>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <a  href="https://bootswatch.com/" target="_blank"><mark>Bootswatch</mark></a>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <a  href="https://react-bootstrap.github.io/" target="_blank"><mark>React-</mark>Bootstrap</a>
+            </li>
+          </ul>
           <!-- well -->
           <div class="well">Thank you for reading this</div>
         </div>
@@ -71,10 +87,14 @@
         <!-- jumbotron -->
         <div class="container">
           <div class="jumbotron">
-            <h1><strong>React</strong></h1>
+            <div class="page-header">
+              <h1><strong>React</strong></h1>
+            </div>
             <p>
               "A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES"
-              <span class="label label-info">From React site</span>
+              <span class="label label-info">
+                <a  href="https://facebook.github.io/react/" target="_blank">From <abbr title="React">R</abbr> site</a>
+              </span>
             </p>
           </div>
           <!-- panel -->
@@ -135,6 +155,18 @@
               </div>
             </div>
           </div>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info active">Libraries using React</li>
+            <li class="list-group-item list-group-item-info">
+              <a  href="https://react-bootstrap.github.io/" target="_blank">React<mark>-Bootstrap</mark></a>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <a  href="http://reactphp.org/" target="_blank">React <mark>Php</mark></a>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <a  href="https://reactjs.net/" target="_blank">ReactJS<mark>.NET</mark></a>
+            </li>
+          </ul>
           <!-- well -->
           <div class="well">Thank you for reading this</div>
         </div>

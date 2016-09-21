@@ -1,25 +1,25 @@
 /* customize the bootstrap compents to fit the page */
 
-$navBackgroundColore: #B93A32
+$navBackgroundColore: #a50000
 
 .nav-tabs
   background-color: #3c4865
 
   a:hover
-    background-color: lighten($navBackgroundColore, 5) !important
+    background-color: $navBackgroundColore !important
 
   a
     font-size: 1.3em
 
 .active a
-  background-color: #B93A32 !important
+  background-color: lighten($navBackgroundColore, 5) !important
   color: #4C6A92 !important
 
   &:hover
-    background-color: $navBackgroundColore !important
+    background-color: lighten($navBackgroundColore, 5) !important
 
 .myClass.active a
-  background-color: #cf564f !important
+  background-color: $navBackgroundColore !important
 
 .jumbotron
   margin-top: 1em
@@ -35,3 +35,10 @@ $navBackgroundColore: #B93A32
 .panel-footer div
   @media screen and (max-width: 430px)
     transform: translateX(-0.3em)
+
+.text-center
+  font-size: responsive
+
+.center-block button:hover
+  transition: all 0.2s ease
+  transform: rotateZ(360deg)

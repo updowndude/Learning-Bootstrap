@@ -8,15 +8,17 @@
 @import "base"
 
 /* the darken background */
-$bg: #B93A32
-$navBackgroundColor: #D1F8A1
+\:root
+  --bg: #B93A32
+  --navBackgroundColor: #D1F8A1
+  --myBlue: #4C6A92
 
 *
   outline: 0 !important
 
 body
-  background-color: $bg
-  color: #4C6A92
+  background-color: var(--bg)
+  color: var(--myBlue)
 
 /* load a custom font */
 @font-face
@@ -28,7 +30,7 @@ section > article:last-child
   display: none
 
 pre
-  color: #4C6A92 !important
+  color: var(--myBlue) !important
 
 /* display the code correctly */
 .myReactCode
@@ -41,7 +43,7 @@ pre
 
 /* setup the animation */
 .myAnim
-  background: linear-gradient($bg, #fff)
+  background: linear-gradient(var(--bg), #fff)
   height: 100vh
   width: 300vh
   position: fixed
@@ -70,7 +72,50 @@ pre
   border-radius: 5em
   bottom: 3em
   right: 2em
+  @media screen and (max-width: 440px)
+    bottom: 4em
+
+  &:hover
+    transition: all 0.2s ease
+    transform: translateY(-0.5rem)
 
   a
-    color: $navBackgroundColor !important
+    color: var(--navBackgroundColor) !important
     font-size: 1.25em
+
+
+#myBody
+  background:
+    image: url(../images/dkBG2.png)
+    size: cover
+
+.indexFooter
+  background-color: rgba(76, 106, 146, 0.50196)
+
+  small
+    letter-spacing: 2rem
+
+// index well
+#indexContainer
+
+  .well
+    background-color: var(--navBackgroundColor)
+
+  button
+    margin: 1rem 0 1rem 0
+    position: relative
+
+  .page-header
+    border-bottom: 1px solid #773838
+
+    #myWelcomeImage
+      // https://github.com/tholman/github-corners
+      background:
+        image: url(../images/github-corner-right.svg)
+        repeat: no-repeat
+      height: 8rem
+      width: 10rem
+      position: relative
+      transform: rotateZ(-45deg) translate(20rem,27.5rem)
+      @media screen and (max-width: 490px)
+        transform: rotateZ(-45deg) translate(6rem,13.5rem)
