@@ -173,7 +173,7 @@
       </article>
     </section>
     <!-- home button -->
-    <button id="btnHome" type="button" class="btn btn-primary"><a href="..//index.php">
+    <button id="btnHome" type="button" class="btn btn-primary"><a href="../index.php">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
     </a></button>
     <!-- animation background -->
