@@ -14,7 +14,7 @@
           </span>
         </p>
       </div>
-    </header>  
+    </header>
     <!-- panel and its three different parts -->
     <div class="panel panel-info">
       <div class="panel-heading">Panel</div>

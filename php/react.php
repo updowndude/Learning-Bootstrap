@@ -42,30 +42,30 @@
       <div class="panel-heading">Layout Example</div>
       <div class="panel-body myReactCode">
         <p>
-        import React from 'react';
-        import About from './about.jsx';
-        import Form from './form.jsx';
-        import Game from './game.jsx';
-        import Home from './home.jsx';
-        import Programming from './programming.jsx';
-        import Reverse from './reverse.jsx';
-        import Nav from './nav.jsx';
+          import React from 'react';
+          import About from './about.jsx';
+          import Form from './form.jsx';
+          import Game from './game.jsx';
+          import Home from './home.jsx';
+          import Programming from './programming.jsx';
+          import Reverse from './reverse.jsx';
+          import Nav from './nav.jsx';
 
-        class Layout extends React.Component {
-          render() {
-            return (
-              &lt;section&gt;
-                &lt;Nav/&gt;
-                &lt;Home img=&quot;images/fm.png&quot;/&gt;
-                &lt;About img=&quot;images/me.jpg&quot;/&gt;
-                &lt;Programming/&gt;
-                &lt;Reverse/&gt;
-                &lt;Game/&gt;
-                &lt;Form/&gt;
-              &lt;/section&gt;
-            );
+          class Layout extends React.Component {
+            render() {
+              return (
+                &lt;section&gt;
+                  &lt;Nav/&gt;
+                  &lt;Home img=&quot;images/fm.png&quot;/&gt;
+                  &lt;About img=&quot;images/me.jpg&quot;/&gt;
+                  &lt;Programming/&gt;
+                  &lt;Reverse/&gt;
+                  &lt;Game/&gt;
+                  &lt;Form/&gt;
+                &lt;/section&gt;
+              );
+            }
           }
-        }
       </p>
       </div>
       <div class="panel-footer">
