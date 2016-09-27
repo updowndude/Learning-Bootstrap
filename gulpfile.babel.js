@@ -1,35 +1,37 @@
 import gulp from 'gulp';
-import livereload from 'gulp-livereload';
-import sass from 'gulp-ruby-sass';
+import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import csswring from 'csswring';
 import cssnext from 'postcss-cssnext';
 import webpack from 'gulp-webpack';
 import rucksack from 'rucksack-css';
-// another postcss adder
-// import lost from 'lost';
+import browserSync from 'browser-sync';
+import lost from 'lost';
+import connect from 'gulp-connect-php';
+
+browserSync.create();
 
 gulp.task('sass', () => {
 	const processors = [
 		csswring,
 		cssnext,
-		rucksack
+		rucksack,
 		// simlar to bootsrap grids but has more functionality
-		// lost
+		lost
 	];
 
 	// compile sass to css then use post css
-	return sass('sass/myStyle.sass')
-    .on('error', sass.logError)
+	return gulp.src('sass/myStyle.sass')
+		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
 		.pipe(sourcemaps.write('maps', {
 			includeContent: false,
 			sourceRoot: 'source'
 		}))
 		.pipe(postcss(processors))
-    .pipe(gulp.dest('public/dist'))
-    .pipe(livereload());
+    .pipe(gulp.dest('public/dist'));
+    // .pipe(livereload());
 });
 
 // convert new JavaSciprt into older version
@@ -52,26 +54,34 @@ gulp.task('js', () => {
 			}
 		}))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('public/dist'))
-    .pipe(livereload());
+		.pipe(gulp.dest('public/dist'));
+    // .pipe(livereload());
 });
 
-// livereload if chnage in php file
-gulp.task('php', () => {
-	return gulp.src('./index.php')
-	.pipe(livereload());
+// browserSync if chnage
+gulp.task('js-watch', ['js'], () => {
+	browserSync.reload();
 });
 
-gulp.task('phper', () => {
-	return gulp.src('php/*.php')
-	.pipe(livereload());
+gulp.task('sass-watch', ['sass'], () => {
+	browserSync.reload();
 });
 
-// continuously watch select areas then fire off a funcation
 gulp.task('default', () => {
-	livereload({start: true});
-	gulp.watch('sass/*.sass', ['sass']);
-	gulp.watch('js/*.js', ['js']);
-	gulp.watch('./*.php', ['php']);
-	gulp.watch('php/*.php', ['phper']);
+	connect.server({}, () => {
+		browserSync({
+			proxy: '127.0.0.1:8000'
+		});
+	});
+
+	gulp.watch('sass/*.sass', ['sass-watch']);
+	gulp.watch('js/*.js', ['js-watch']);
+	gulp.watch('./*.php').on('change', () => {
+		browserSync.reload();
+	});
+	gulp.watch('php/*.php').on('change', () => {
+		browserSync.reload();
+	});
 });
+
+gulp.task('mamp', ['config', 'start']);
