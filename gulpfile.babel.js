@@ -1,3 +1,4 @@
+/* @flow */
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -45,7 +46,7 @@ gulp.task('js', () => {
 					exclude: /node_modules/,
 					query: {
 						presets: ['es2015', 'es2016', 'es2017'],
-						plugins: ['transform-runtime']
+						plugins: ['transform-runtime', 'transform-flow-strip-types']
 					}
 				}]
 			},
@@ -79,7 +80,7 @@ gulp.task('default', () => {
 	gulp.watch('./*.php').on('change', () => {
 		browserSync.reload();
 	});
-	gulp.watch('php/*.php').on('change', () => {
+	gulp.watch('./php/**/*.php').on('change', () => {
 		browserSync.reload();
 	});
 });

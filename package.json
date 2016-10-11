@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "dev": "gulp & node index.js"
+    "dev": "gulp & babel-node index.js",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "keywords": [
     "test"
@@ -29,21 +30,6 @@
     ],
     "ignores": [
       "public/**"
-    ],
-    "overrides": [
-      {
-        "files": "gulpfile.babel.js",
-        "rules": {
-          "camelcase": 0
-        }
-      },
-      {
-        "files": "js/bob.js",
-        "rules": {
-          "no-unused-vars": 0,
-          "quotes": 0
-        }
-      }
     ]
   },
   "dependencies": {
@@ -56,6 +42,7 @@
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-es2016": "^6.11.3",
@@ -63,6 +50,7 @@
     "babel-register": "^6.14.0",
     "browser-sync": "^2.16.0",
     "csswring": "^5.1.0",
+    "flow-bin": "^0.33.0",
     "gulp": "^3.9.1",
     "gulp-connect-php": "0.0.8",
     "gulp-livereload": "^3.8.1",

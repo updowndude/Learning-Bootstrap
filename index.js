@@ -1,7 +1,8 @@
-require('babel-register');
-const path = require('path');
-const express = require('express');
-const favicon = require('serve-favicon');
+/* @flow */
+// import 'babel-register';
+import path from 'path';
+import express from 'express';
+import favicon from 'serve-favicon';
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));

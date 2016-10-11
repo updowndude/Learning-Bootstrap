@@ -40,7 +40,7 @@ pre
     margin: -5.5em
     @media screen and (max-width: 480px)
       margin: -5.5em 0 -5.5em 0
-      
+
 /* setup the animation */
 .myAnim
   background: linear-gradient(var(--bg), #fff)
@@ -107,7 +107,7 @@ pre
 
     &:hover
       transition: all 0.1s ease
-      transform: rotateZ(15deg)
+      transform: rotateZ(10deg)
 
   .page-header
     border-bottom: 1px solid #773838
@@ -123,3 +123,10 @@ pre
       transform: rotateZ(-45deg) translate(20rem,27.5rem)
       @media screen and (max-width: 490px)
         transform: rotateZ(-45deg) translate(6rem,13.5rem)
+
+section article
+
+  &:nth-child(2)
+    display: none
+  &:nth-child(3)
+    display: none

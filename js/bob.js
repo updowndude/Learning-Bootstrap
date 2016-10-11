@@ -1,24 +1,89 @@
-import bsn from 'bootstrap.native';
+/* @flow */
+// import bsn from 'bootstrap.native';
 
-// number of clicks
 // by correy winke
-let intClickNumber = 0;
+const Master: {
+		intProgressValue: number,
+		intClickNumber: number,
+		aryElementSlected: Array<string>
+	} = {
+		intProgressValue: 0,
+		// number of clicks
+		intClickNumber: 0,
+		aryElementSlected: []
+	};
+
+class FormTest {
+	constructor(element: any, intProgressValue: number) {
+		this.currentElement = element;
+		this.intProgressValue = intProgressValue;
+	}
+	blurMover(): number {
+		const progress: any = document.getElementsByClassName('progress-bar')[0];
+		const blnFlag = checks();
+		let strFoundNewElement: string = '';
+		let intRemoveAt: number = 0;
+		let aryCopy: Array<string> = [];
+
+		for (const val of Master.aryElementSlected) {
+			intRemoveAt++;
+			if (val === this.currentElement.classList.item(0)) {
+				strFoundNewElement = val;
+				break;
+			}
+		}
+
+		if ((strFoundNewElement === '') && (this.currentElement.value !== '')) {
+			Master.aryElementSlected.push(this.currentElement.classList.item(0));
+			this.intProgressValue += 17;
+		} else if (strFoundNewElement !== '') {
+			if ((this.currentElement.value === '') || (blnFlag === true)) {
+				console.log(Master.aryElementSlected.length);
+				console.log(Master.aryElementSlected);
+				aryCopy = Master.aryElementSlected;
+				aryCopy = aryCopy.splice(intRemoveAt, 1);
+				Master.aryElementSlected = aryCopy;
+				console.log(Master.aryElementSlected.length);
+				console.log(Master.aryElementSlected);
+				this.intProgressValue -= 17;
+			}
+		}
+
+		progress.style.width = `${this.intProgressValue}%`;
+		return this.intProgressValue;
+	}
+}
+
+function checks(): boolean {
+	const anyAllChecks: any = document.getElementsByClassName('checkboxInput');
+	for (let lcv = 0; lcv < anyAllChecks.length; lcv++) {
+		if (anyAllChecks[lcv].checked === true) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function mover(element: any): void {
+	const doSomeThing: FormTest = new FormTest(element, Master.intProgressValue);
+	Master.intProgressValue = doSomeThing.blurMover();
+}
 
 // funcation taggered when a tab is clicked
-function navClicker(element) {
+function navClicker(element): void {
   // gets the badge
-	const badNum = document.querySelector('.badge');
+	const badNum: any = document.querySelector('.badge');
   // gets the active tab
-	const tabActive = document.querySelector('.active');
+	const tabActive: any = document.querySelector('.active');
   // get all of the article that make up the body after nav
-	const sectionArts = document.querySelectorAll('section > article');
+	const sectionArts: any = document.querySelectorAll('section > article');
   // get the figure for the animation
-	const myTarget = document.getElementsByClassName('target');
+	const myTarget: any = document.getElementsByClassName('target');
 
   // add one to counter of clicks
-	intClickNumber++;
+	Master.intClickNumber++;
   // change that number in HTML
-	badNum.innerHTML = intClickNumber;
+	badNum.innerHTML = `${Master.intClickNumber}`;
   // remove the active tab
 	tabActive.classList.remove('active');
   // add the ative class to the new element
@@ -31,17 +96,26 @@ function navClicker(element) {
 	}
 
   // see what tab is currently active
-	if (element.classList.length === 2) {
+	if ((element.classList.length === 2) && (element.classList[0] === 'myClass')) {
     // set the background of page
-		document.body.style.backgroundImage = "url('../public/images/dkBG3.png')";
+		document.body.style.backgroundImage = 'url("../../public/images/dkBG3.png")';
     // display the correct the cotent
 		sectionArts[1].style.display = 'block';
     // the other tab was clicked
-	} else {
+	}
+
+	if (element.classList.length === 1) {
     // set the background of page
-		document.body.style.backgroundImage = "url('../public/images/dkBG2.png')";
+		document.body.style.backgroundImage = 'url("../../public/images/dkBG2.png")';
     // display the correct the cotent
 		sectionArts[0].style.display = 'block';
+	}
+
+	if ((element.classList.length === 2) && (element.classList[0] === 'myClass2')) {
+		// set the background of page
+		document.body.style.backgroundImage = 'url("../../public/images/dkBG4.png")';
+    // display the correct the cotent
+		sectionArts[2].style.display = 'block';
 	}
 
   // adds the animation class
@@ -55,3 +129,4 @@ function navClicker(element) {
 }
 
 window.navClicker = navClicker;
+window.mover = mover;

@@ -8,6 +8,9 @@
         <li role="presentation" class="myClass" onclick="navClicker(this)">
           <a role="button" href="#">React</a>
         </li>
+        <li role="presentation" class="myClass2" onclick="navClicker(this)">
+          <a role="button" href="#">Contact me</a>
+        </li>
         <li role="presentation" class="disabled">
           <a role="button" href="#">
             Pages viewed <span class="badge">0</span>
@@ -18,9 +21,10 @@
     <section>
 <?php require_once('bootsrap.php') ?>
 <?php require_once('react.php') ?>
+<?php require_once('contact.php') ?>
     </section>
     <!-- home button -->
-    <a href="../index.php" class="btn btn-primary" role="button" id="btnHome">
+    <a href="../../index.php" class="btn btn-primary" role="button" id="btnHome">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
     </a>
     <!-- animation background -->

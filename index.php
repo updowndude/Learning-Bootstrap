@@ -28,7 +28,7 @@
         </div>
         <div class="row center-block">
           <div class="col-md-3">
-            <a href="php/landpage.php" class="btn btn-danger" role="button">
+            <a href="php/view/landpage.php" class="btn btn-danger" role="button">
               Land Page
             </a>
           </div>
