@@ -81,7 +81,7 @@
 			key: 'blurMover',
 			value: function blurMover() {
 				var progress = document.getElementsByClassName('progress-bar')[0];
-				var blnFlag = checks();
+				var blnFlag = checks(this.currentElement.classList.item(0));
 				var strFoundNewElement = '';
 				var intRemoveAt = 0;
 				var aryCopy = [];
@@ -120,13 +120,11 @@
 					this.intProgressValue += 17;
 				} else if (strFoundNewElement !== '') {
 					if (this.currentElement.value === '' || blnFlag === true) {
-						console.log(Master.aryElementSlected.length);
-						console.log(Master.aryElementSlected);
 						aryCopy = Master.aryElementSlected;
-						aryCopy = aryCopy.splice(intRemoveAt, 1);
+						aryCopy = aryCopy.filter(function (value) {
+							return value !== strFoundNewElement;
+						});
 						Master.aryElementSlected = aryCopy;
-						console.log(Master.aryElementSlected.length);
-						console.log(Master.aryElementSlected);
 						this.intProgressValue -= 17;
 					}
 				}
@@ -138,17 +136,21 @@
 		return FormTest;
 	}();
 
-	function checks() {
-		var anyAllChecks = document.getElementsByClassName('checkboxInput');
-		for (var lcv = 0; lcv < anyAllChecks.length; lcv++) {
-			if (anyAllChecks[lcv].checked === true) {
-				return false;
+	function checks(strValue) {
+		if (strValue === 'checkboxInput' || strValue === 'radioInput') {
+			var anyAllChecks = document.getElementsByClassName(strValue);
+			for (var lcv = 0; lcv < anyAllChecks.length; lcv++) {
+				if (anyAllChecks[lcv].checked === true) {
+					return false;
+				}
 			}
 		}
 		return true;
 	}
 
 	function mover(element) {
+		element.value = element.value.trim();
+
 		var doSomeThing = new FormTest(element, Master.intProgressValue);
 		Master.intProgressValue = doSomeThing.blurMover();
 	}

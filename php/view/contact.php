@@ -9,13 +9,13 @@
             <div class="col-sm-offset-1">
               <label class="text-warning" for="fName">First Name</label>
             </div>
-            <input type="text" oninput="mover(this)" class="textFnameInput form-control" name="fName" id="fName">
+            <input type="text" onblur="mover(this)" class="textFnameInput form-control" name="fName" id="fName">
           </div>
           <div class="form-group">
             <div class="col-sm-offset-1">
               <label class="text-warning" for="lName">Last Name</label>
             </div>
-            <input type="text" oninput="mover(this)" class="textLnameInput form-control" name="lName" id="lName">
+            <input type="text" onblur="mover(this)" class="textLnameInput form-control" name="lName" id="lName">
           </div>
           <div class="form-group">
             <div class="col-sm-offset-1">
@@ -24,19 +24,19 @@
             <br />
               <div class="col-xs-offset-1">
                <label class="radio-inline">
-                 <input type="radio" onchange="mover(this)" class="radioInput" name="quality" value="Horrible">Horrible
+                 <input type="radio" onclick="mover(this)" class="radioInput" name="quality" value="Horrible">Horrible
                </label>
                <label class="radio-inline">
-                 <input type="radio" onchange="mover(this)" class="radioInput" name="quality" value="Bad">Bad
+                 <input type="radio" onclick="mover(this)" class="radioInput" name="quality" value="Bad">Bad
                </label>
                <label class="radio-inline">
-                 <input type="radio" onchange="mover(this)" class="radioInput" name="quality" value="OK">Ok
+                 <input type="radio" onclick="mover(this)" class="radioInput" name="quality" value="OK">Ok
                </label>
                <label class="radio-inline">
-                 <input type="radio" onchange="mover(this)" class="radioInput" name="quality" value="Good">Good
+                 <input type="radio" onclick="mover(this)" class="radioInput" name="quality" value="Good">Good
                </label>
                <label class="radio-inline">
-                 <input type="radio" onchange="mover(this)" class="radioInput" name="quality" value="Great">Great
+                 <input type="radio" onclick="mover(this)" class="radioInput" name="quality" value="Great">Great
                </label>
              </div>
           </div>
@@ -47,19 +47,19 @@
             <br />
             <div class="col-xs-offset-1">
               <label class="checkbox">
-                <input type="checkbox" onchange="mover(this)" class="checkboxInput" name="checkboxs[]" value="Bootstrap.Native">Bootstrap.Native
+                <input type="checkbox" onclick="mover(this)" class="checkboxInput" name="checkboxs[]" value="Bootstrap.Native">Bootstrap.Native
               </label>
               <label class="checkbox">
-                <input type="checkbox"  onchange="mover(this)" class="checkboxInput" name="checkboxs[]" value="Bootswatch">Bootswatch
+                <input type="checkbox" onclick="mover(this)" class="checkboxInput" name="checkboxs[]" value="Bootswatch">Bootswatch
               </label>
               <label class="checkbox">
-                <input type="checkbox" onchange="mover(this)" class="checkboxInput" name="checkboxs[]" value="React-Bootsrap">React-Bootsrap
+                <input type="checkbox" onclick="mover(this)" class="checkboxInput" name="checkboxs[]" value="React-Bootsrap">React-Bootsrap
               </label>
               <label class="checkbox">
-                <input type="checkbox" onchange="mover(this)" class="checkboxInput" name="checkboxs[]" value="React php">React Php
+                <input type="checkbox" onclick="mover(this)" class="checkboxInput" name="checkboxs[]" value="React php">React Php
               </label>
               <label class="checkbox">
-                <input type="checkbox" onchange="mover(this)" class="checkboxInput" name="checkboxs[]" value="ReactJS.NET">ReactJS.NET
+                <input type="checkbox" onclick="mover(this)" class="checkboxInput" name="checkboxs[]" value="ReactJS.NET">ReactJS.NET
               </label>
             </div>
           </div>
@@ -79,7 +79,7 @@
             <div class="col-sm-offset-1">
               <label  class="text-warning" for="comment">Comment:</label>
             </div>
-            <textarea oninput="mover(this)" class="textareaInput form-control" name="message" rows="5"></textarea>
+            <textarea onblur="mover(this)" class="textareaInput form-control" name="message" rows="5"></textarea>
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>

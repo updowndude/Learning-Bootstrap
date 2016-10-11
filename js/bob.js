@@ -20,7 +20,7 @@ class FormTest {
 	}
 	blurMover(): number {
 		const progress: any = document.getElementsByClassName('progress-bar')[0];
-		const blnFlag = checks();
+		const blnFlag: boolean = checks(this.currentElement.classList.item(0));
 		let strFoundNewElement: string = '';
 		let intRemoveAt: number = 0;
 		let aryCopy: Array<string> = [];
@@ -38,13 +38,11 @@ class FormTest {
 			this.intProgressValue += 17;
 		} else if (strFoundNewElement !== '') {
 			if ((this.currentElement.value === '') || (blnFlag === true)) {
-				console.log(Master.aryElementSlected.length);
-				console.log(Master.aryElementSlected);
 				aryCopy = Master.aryElementSlected;
-				aryCopy = aryCopy.splice(intRemoveAt, 1);
+				aryCopy = aryCopy.filter(value => {
+					return value !== strFoundNewElement;
+				});
 				Master.aryElementSlected = aryCopy;
-				console.log(Master.aryElementSlected.length);
-				console.log(Master.aryElementSlected);
 				this.intProgressValue -= 17;
 			}
 		}
@@ -54,17 +52,21 @@ class FormTest {
 	}
 }
 
-function checks(): boolean {
-	const anyAllChecks: any = document.getElementsByClassName('checkboxInput');
-	for (let lcv = 0; lcv < anyAllChecks.length; lcv++) {
-		if (anyAllChecks[lcv].checked === true) {
-			return false;
+function checks(strValue: string): boolean {
+	if ((strValue === 'checkboxInput') || (strValue === 'radioInput')) {
+		const anyAllChecks: any = document.getElementsByClassName(strValue);
+		for (let lcv = 0; lcv < anyAllChecks.length; lcv++) {
+			if (anyAllChecks[lcv].checked === true) {
+				return false;
+			}
 		}
 	}
 	return true;
 }
 
 function mover(element: any): void {
+	element.value = element.value.trim();
+
 	const doSomeThing: FormTest = new FormTest(element, Master.intProgressValue);
 	Master.intProgressValue = doSomeThing.blurMover();
 }
