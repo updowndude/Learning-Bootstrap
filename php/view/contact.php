@@ -1,11 +1,15 @@
+<!-- by Correy WInke -->
+<!-- 10/17/16 -->
 <article>
   <div class="container">
     <div class="panel panel-info firstThing">
       <div class="panel-heading">FeedBack</div>
       <div class="panel-body">
+        <!-- handles feedback form the user -->
         <form action="../controller/action.php" method="post">
           <input type="hidden" name="action" value="done" />
           <div class="form-group">
+            <!-- gorups togther and a label -->
             <div class="col-sm-offset-1">
               <label class="text-warning" for="fName">First Name</label>
             </div>
@@ -22,6 +26,7 @@
               <label class="text-warning" for="lName">Over all experience</label>
             </div>
             <br />
+            <!-- radios are inline and all togthere -->
               <div class="col-xs-offset-1">
                <label class="radio-inline">
                  <input type="radio" onclick="mover(this)" class="radioInput" name="quality" value="Horrible">Horrible
@@ -46,6 +51,7 @@
             </div>
             <br />
             <div class="col-xs-offset-1">
+              <!-- same thing for the checkbos -->
               <label class="checkbox">
                 <input type="checkbox" onclick="mover(this)" class="checkboxInput" name="checkboxs[]" value="Bootstrap.Native">Bootstrap.Native
               </label>
@@ -67,6 +73,7 @@
             <div class="col-sm-offset-1">
               <label class="text-warning" for="sel1">Favorite new library</label>
             </div>
+            <!-- Select and options -->
             <select name="fav" class="selectInput form-control" onchange="mover(this)">
               <option>Bootstrap.Native</option>
               <option>Bootswatch</option>
@@ -84,6 +91,7 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>
+      <!-- progress bar fills out whe completing the form -->
       <div class="panel-footer">
         <div class="progress">
           <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
@@ -92,4 +100,4 @@
       </div>
     </div>
   </div>
-<article>
+</article>

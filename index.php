@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- by Correy WInke -->
+  <!-- 10/17/16 -->
   <!-- info to understand the page -->
   <meta name="author" content="Correy Winke">
   <meta name="language" content="english">
@@ -18,14 +19,17 @@
 </head>
 <body>
   <main>
+    <!-- Welcome screen -->
     <div class="container" id="indexContainer">
       <div class="well">
         <div class="row">
+          <!-- Top of panel -->
           <div class="text-center page-header">
             <h1>Welcome</h1>
             <h2 class="text-hide" id="myWelcomeImage">Fork me on Github</h2>
           </div>
         </div>
+        <!-- buttons to other pages -->
         <div class="row center-block">
           <div class="col-md-3">
             <a href="php/view/landpage.php" class="btn btn-danger" role="button">

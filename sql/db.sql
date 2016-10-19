@@ -1,8 +1,10 @@
-drop database if exists learningBootsrap;
-create database learningBootsrap;
+-- makes the database
+-- drop database if its there
+-- drop database if exists cwinkebt_learningBootsrap;
+-- create database cwinkebt_learningBootsrap;
+use cwinkebt_learningBootsrap;
 
-use learningBootsrap;
-
+-- build the tables
 create table info (
 	info_id int auto_increment primary key,
     fname varchar(50) not null,

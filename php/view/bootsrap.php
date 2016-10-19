@@ -1,3 +1,6 @@
+<!-- by Correy WInke -->
+<!-- 10/17/16 -->
+<!-- HTML is mirrored in react.php but imforamtion changed -->
 <article>
   <!-- jumbotron -->
   <div class="container">

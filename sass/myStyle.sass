@@ -1,13 +1,16 @@
+// by Correy Winke
+// 10/17/16
+
 @charset "UTF-8"
 
-/* by correy winke */
-/* beging in the diffrent styles to make on big file */
+// by correy winke
+// beging in the diffrent styles to make on big file
 @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap"
 @import "bsCustom"
 @import "footer"
 @import "base"
 
-/* the darken background */
+// the darken background
 \:root
   --bg: #B93A32
   --navBackgroundColor: #D1F8A1
@@ -20,19 +23,19 @@ body
   background-color: var(--bg)
   color: var(--myBlue)
 
-/* load a custom font */
+// load a custom font
 @font-face
   src: url(../fonts/Dyslexie.ttf)
   font-family: "dyslexie"
 
-/* display the bootstrap page only */
+// display the bootstrap page only
 section > article:last-child
   display: none
 
 pre
   color: var(--myBlue) !important
 
-/* display the code correctly */
+// display the code correctly
 .myReactCode
   white-space: pre-wrap
 
@@ -41,7 +44,7 @@ pre
     @media screen and (max-width: 480px)
       margin: -5.5em 0 -5.5em 0
 
-/* setup the animation */
+// setup the animation
 .myAnim
   background: linear-gradient(var(--bg), #fff)
   height: 100vh
@@ -57,7 +60,7 @@ pre
     duration: 0.7s
     iteration-count: 1
 
-/* the what happens during the animation */
+// the what happens during the animation
 @keyframes progress
   0%
     opacity: 100%

@@ -1,3 +1,6 @@
+<!-- by Correy WInke -->
+<!-- 10/17/16 -->
+<!-- react and boostrap share a lot of same HTML -->
 <article>
   <!-- jumbotron -->
   <div class="container">
@@ -75,6 +78,7 @@
         </div>
       </div>
     </div>
+    <!-- different combiton libraies for boootsrap -->
     <ul class="list-group">
       <li class="list-group-item list-group-item-info active">Libraries using React</li>
       <li class="list-group-item list-group-item-info">
@@ -87,6 +91,7 @@
         <a  href="https://reactjs.net/" target="_blank">ReactJS<mark>.NET</mark></a>
       </li>
     </ul>
+    <!-- tabel with of the library -->
     <div class="panel panel-info">
       <div class="panel-heading">Parts</div>
       <div class="panel-body">
@@ -104,7 +109,7 @@
                 <td>
                   "Learn Once, Write Anywhere"
                   <span class="label label-info">
-                    <a  href="https://facebook.github.io/react/" target="_blank">From <abbr title="React">R</abbr> site</a>
+                    <a href="https://facebook.github.io/react/" target="_blank">From <abbr title="React">R</abbr> site</a>
                   </span>
                 </td>
                 <td>JSX</td>

@@ -1,4 +1,6 @@
 /* @flow */
+// by correy winke
+// 10/17/16
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -13,6 +15,7 @@ import connect from 'gulp-connect-php';
 
 browserSync.create();
 
+// build out css using sass and postcsss
 gulp.task('sass', () => {
 	const processors = [
 		csswring,
@@ -23,7 +26,7 @@ gulp.task('sass', () => {
 	];
 
 	// compile sass to css then use post css
-	return gulp.src('sass/myStyle.sass')
+	return gulp.src('./sass/myStyle.sass')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
 		.pipe(sourcemaps.write('maps', {
@@ -36,8 +39,9 @@ gulp.task('sass', () => {
 });
 
 // convert new JavaSciprt into older version
+// build out js using babel
 gulp.task('js', () => {
-	return gulp.src('js/bob.js')
+	return gulp.src('./js/bob.js')
 		.pipe(sourcemaps.init())
 		.pipe(webpack({
 			module: {
@@ -68,6 +72,7 @@ gulp.task('sass-watch', ['sass'], () => {
 	browserSync.reload();
 });
 
+// just gulp to start
 gulp.task('default', () => {
 	connect.server({}, () => {
 		browserSync({
@@ -75,8 +80,9 @@ gulp.task('default', () => {
 		});
 	});
 
-	gulp.watch('sass/*.sass', ['sass-watch']);
-	gulp.watch('js/*.js', ['js-watch']);
+	// see if there a change
+	gulp.watch('./sass/*.sass', ['sass-watch']);
+	gulp.watch('./js/*.js', ['js-watch']);
 	gulp.watch('./*.php').on('change', () => {
 		browserSync.reload();
 	});
@@ -84,5 +90,3 @@ gulp.task('default', () => {
 		browserSync.reload();
 	});
 });
-
-gulp.task('mamp', ['config', 'start']);

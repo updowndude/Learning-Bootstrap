@@ -1,3 +1,6 @@
+<!-- by Correy WInke -->
+<!-- 10/17/16 -->
+
 <?php require_once('head.php') ?>
     <nav>
       <!-- bootstrap nav in tabs -->
@@ -5,11 +8,14 @@
         <li role="presentation" class="active" onclick="navClicker(this)">
           <a role="button" href="#">Bootstrap</a>
         </li>
-        <li role="presentation" class="myClass" onclick="navClicker(this)">
+        <li role="presentation" class="myClass1" onclick="navClicker(this)">
           <a role="button" href="#">React</a>
         </li>
         <li role="presentation" class="myClass2" onclick="navClicker(this)">
           <a role="button" href="#">Contact me</a>
+        </li>
+        <li role="presentation" class="myClass3" onclick="navClicker(this)">
+          <a role="button" href="#">Image Gallery</a>
         </li>
         <li role="presentation" class="disabled">
           <a role="button" href="#">
@@ -19,9 +25,11 @@
       </ul>
     </nav>
     <section>
+<!-- different parts of page and nav sections -->
 <?php require_once('bootsrap.php') ?>
 <?php require_once('react.php') ?>
 <?php require_once('contact.php') ?>
+<?php require_once('img.php') ?>
     </section>
     <!-- home button -->
     <a href="../../index.php" class="btn btn-primary" role="button" id="btnHome">

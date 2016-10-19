@@ -4,7 +4,6 @@
   "description": "inclass overworking assigment",
   "main": "index.js",
   "scripts": {
-    "test": "xo",
     "dev": "gulp & babel-node index.js",
     "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
@@ -21,16 +20,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/updowndude/Learning-Bootstrap"
-  },
-  "xo": {
-    "esnext": true,
-    "globals": [
-      "window",
-      "document"
-    ],
-    "ignores": [
-      "public/**"
-    ]
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
@@ -53,8 +42,6 @@
     "flow-bin": "^0.33.0",
     "gulp": "^3.9.1",
     "gulp-connect-php": "0.0.8",
-    "gulp-livereload": "^3.8.1",
-    "gulp-mamp": "0.0.4",
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
@@ -62,7 +49,6 @@
     "lost": "^7.1.0",
     "postcss-cssnext": "^2.8.0",
     "rucksack-css": "^0.8.6",
-    "webpack": "^1.13.2",
-    "xo": "^0.16.0"
+    "webpack": "^1.13.2"
   }
 }

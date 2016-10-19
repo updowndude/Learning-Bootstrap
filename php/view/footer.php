@@ -1,3 +1,5 @@
+<!-- by Correy WInke -->
+<!-- 10/17/16 -->
 <!-- page footer -->
 <footer>
   <p> Correy Winke, &copy; 2016.</p>
