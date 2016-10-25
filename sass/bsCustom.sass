@@ -7,6 +7,8 @@
 $navBackgroundColore: #a50000
 
 .nav-tabs
+  position: fixed
+  width: 100%
   background-color: #3c4865
 
   a:hover
@@ -14,10 +16,11 @@ $navBackgroundColore: #a50000
 
   a
     font-size: 1.3em
+    color: #fff
 
 .active a
   background-color: lighten($navBackgroundColore, 5) !important
-  color: #4C6A92 !important
+  color: #fff !important
 
   &:hover
     background-color: lighten($navBackgroundColore, 5) !important
@@ -27,10 +30,13 @@ $navBackgroundColore: #a50000
   background-color: $navBackgroundColore !important
 
 .myClass2.active a
+  background-color: darken($navBackgroundColore,2.5) !important
+
+.myClass3.active a
   background-color: darken($navBackgroundColore,5) !important
 
 .firstThing
-  margin: 1em 0 5em 0
+  margin: 5em 0 5em 0
 
 //  style the article and sub elements
 
@@ -56,3 +62,17 @@ $navBackgroundColore: #a50000
 .media-body img
   height: 20rem
   width: 20rem
+
+.nav-pills a:hover
+  background-color: darken($navBackgroundColore, 2) !important
+
+.dropdown-menu
+  background-color: #4C6A92
+
+  a
+    color: #fff !important
+
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus
+  border-color: #3c4865 !important
+  background-color: $navBackgroundColore

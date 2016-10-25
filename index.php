@@ -30,19 +30,29 @@
           </div>
         </div>
         <!-- buttons to other pages -->
-        <div class="row center-block">
-          <div class="col-md-3">
-            <a href="php/view/landpage.php" class="btn btn-danger" role="button">
-              Land Page
-            </a>
-          </div>
+        <ul class="row nav nav-pills center-block">
           <div class="col-md-4">
-            <a href="http://cwinke.btcwsd.com/php/" target="_blank" class="btn btn-danger" role="button">Summer Project</a>
+            <li>
+              <a href="php/view/landpage.php" class="btn btn-danger" role="button">
+                Land Page
+              </a>
+            </li>
           </div>
-          <div class="col-md-3">
-            <a href="http://cwinke.btcwsd.com/project-03-css3%20final/" target="_blank" class="btn btn-danger" role="button">My Portfolio</a>
+          <div class="col-md-4 col-md-pull-1">
+            <li>
+              <a href="http://cwinke.btcwsd.com/php/" target="_blank" class="btn btn-danger" role="button">
+                Summer Project
+              </a>
+            </li>
           </div>
-        </div>
+          <div class="col-md-4 col-md-pull-1">
+            <li>
+              <a href="http://cwinke.btcwsd.com/project-03-css3%20final/" target="_blank" class="btn btn-danger" role="button">
+                My Portfolio
+              </a>
+            </li>
+          </div>
+        </ul>
       </div>
     </div>
     <!-- page footer -->

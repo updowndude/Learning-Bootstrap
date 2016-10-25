@@ -73,10 +73,10 @@ pre
   position: fixed
   z-index: 99999
   border-radius: 5em
-  bottom: 3em
+  bottom: 1.75em
   right: 2em
   @media screen and (max-width: 440px)
-    bottom: 4em
+    bottom: 3.75em
 
   &:hover
     transition: all 0.2s ease
@@ -133,3 +133,8 @@ section article
     display: none
   &:nth-child(3)
     display: none
+
+// add margin to first element
+
+header > .jumbotron
+  margin-top: 5em

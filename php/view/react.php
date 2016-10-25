@@ -22,7 +22,7 @@
       <div class="panel-heading">Simple Example</div>
       <div class="panel-body myReactCode">
         <!-- if use code tag looks bad -->
-        <p>
+        <p class="text-info center-block">
           import React from 'react';
 
           class Thanks extends React.Component {
@@ -44,7 +44,7 @@
     <div class="panel panel-info">
       <div class="panel-heading">Layout Example</div>
       <div class="panel-body myReactCode">
-        <p>
+        <p class="text-info center-block">
           import React from 'react';
           import About from './about.jsx';
           import Form from './form.jsx';

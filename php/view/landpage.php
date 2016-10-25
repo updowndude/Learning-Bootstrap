@@ -5,11 +5,18 @@
     <nav>
       <!-- bootstrap nav in tabs -->
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active" onclick="navClicker(this)">
-          <a role="button" href="#">Bootstrap</a>
-        </li>
-        <li role="presentation" class="myClass1" onclick="navClicker(this)">
-          <a role="button" href="#">React</a>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Libraries <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li role="presentation" class="active" onclick="navClicker(this)">
+              <a role="button" href="#">Bootstrap</a>
+            </li>
+            <li role="presentation" class="myClass1" onclick="navClicker(this)">
+              <a role="button" href="#">React</a>
+            </li>
+          </ul>
         </li>
         <li role="presentation" class="myClass2" onclick="navClicker(this)">
           <a role="button" href="#">Contact me</a>

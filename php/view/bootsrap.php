@@ -21,19 +21,19 @@
     <!-- panel and its three different parts -->
     <div class="panel panel-info">
       <div class="panel-heading">Panel</div>
-      <div class="panel-body">&lt;div class=&quot;panel panel-info&quot;&gt;&lt;/div&gt;</div>
+      <div class="panel-body text-info center-block">&lt;div class=&quot;panel panel-info&quot;&gt;&lt;/div&gt;</div>
       <div class="panel-footer">
         <div class="row">
-          <div class="col-md-4 col-xs-4">&lt;div class=&quot;panel-heading&quot;&gt;&lt;/div&gt;</div>
-          <div class="col-md-4 col-xs-4">&lt;div class=&quot;panel-body&quot;&gt;&lt;/div&gt;</div>
-          <div class="col-md-4 col-xs-4">&lt;div class=&quot;panel-footer&quot;&gt;&lt;/div&gt;</div>
+          <div class="col-md-4 col-xs-4 text-info center-block">&lt;div class=&quot;panel-heading&quot;&gt;&lt;/div&gt;</div>
+          <div class="col-md-4 col-xs-4 text-info center-block">&lt;div class=&quot;panel-body&quot;&gt;&lt;/div&gt;</div>
+          <div class="col-md-4 col-xs-4 text-info center-block">&lt;div class=&quot;panel-footer&quot;&gt;&lt;/div&gt;</div>
         </div>
       </div>
     </div>
     <!-- panel -->
     <div class="panel panel-info">
       <div class="panel-heading">Well</div>
-      <div class="panel-body">&lt;div class=&quot;well&quot;&gt;&lt;/div&gt;</div>
+      <div class="panel-body text-info center-block">&lt;div class=&quot;well&quot;&gt;&lt;/div&gt;</div>
     </div>
     <ul class="list-group">
       <li class="list-group-item list-group-item-info active">Libraries using Bootstrap</li>

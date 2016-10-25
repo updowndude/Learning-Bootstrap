@@ -6,6 +6,22 @@
 \:root
   --mainTwithoutSize: 'PT Serif', serif
 
+// style the arrow at footer
+.movers
+  position: fixed
+  bottom: 0.5rem
+  @media screen and (max-width: 440px)
+    bottom: 2.25em
+
+  a
+    background-color: #337ab7 !important
+    border-color: #337ab7 !important
+    color: #fff !important
+    font-size: 1.3rem
+
+    &:hover
+      background-color: #025aa5 !important
+
 // styles the footer
 footer
   margin-top: 0.75em

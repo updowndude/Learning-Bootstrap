@@ -92,7 +92,6 @@ function mover(element: any): void {
 
 // helper function for nav clikcer
 function navClickerHelper(element: any, sectionArts: any): void {
-
 	let intCurrentSpot: number = 0;
 
 	for (let lcv = 0; lcv < sectionArts.length; lcv++) {
@@ -176,8 +175,48 @@ function btnClik(element: any) {
 	}
 }
 
+function navLeftOrRight(element: any, blnFlag: boolean): any {
+	const aryElements: Array<string> = ["active","myClass1","myClass2","myClass3"];
+	for (let lcv= 0;lcv < aryElements.length;) {
+		if (element.classList.item(0) === aryElements[lcv]) {
+			if (blnFlag === true) {
+				lcv++;
+
+				if (lcv >= aryElements.length) {
+					lcv = 0;
+					return document.querySelector('.dropdown-menu > li');
+				} else {
+					return document.querySelector(`.${aryElements[lcv]}`);
+				}
+			} else {
+				lcv--;
+
+				if (lcv <= -1) {
+					lcv = aryElements.length-1;
+				}
+				if (lcv === 0) {
+					return document.querySelector('.dropdown-menu > li');
+				} else {
+					return document.querySelector(`.${aryElements[lcv]}`);
+				}
+			}
+		}
+		lcv++;
+	}
+
+	return element;
+}
+
 // funcation taggered when a tab is clicked
 function navClicker(element: any): void {
+	if (element.children[0].className !== "") {
+		if (element.children[0].classList.item(1).indexOf("left") >= 0) {
+			element = navLeftOrRight(document.querySelectorAll(".active")[0], false);
+		} else {
+			element = navLeftOrRight(document.querySelectorAll(".active")[0], true);
+		}
+	}
+
   // gets the badge
 	const badNum: any = document.querySelector('.badge');
   // gets the active tab
