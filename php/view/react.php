@@ -1,7 +1,7 @@
 <!-- by Correy WInke -->
 <!-- 10/17/16 -->
 <!-- react and boostrap share a lot of same HTML -->
-<article>
+<article id="react" class="tab-pane fade">
   <!-- jumbotron -->
   <div class="container">
     <header>
@@ -19,8 +19,8 @@
     </header>
     <!-- panel -->
     <div class="panel panel-info">
-      <div class="panel-heading">Simple Example</div>
-      <div class="panel-body myReactCode">
+      <div class="panel-heading" data-toggle="collapse" data-target="#simpleReact">Simple Example</div>
+      <div id="simpleReact" class="panel-body myReactCode collapse">
         <!-- if use code tag looks bad -->
         <p class="text-info center-block">
           import React from 'react';
@@ -36,14 +36,14 @@
           }
         </p>
       </div>
-      <div class="panel-footer">
+      <div class="panel-footer" data-toggle="collapse" data-target="#simpleReact">
         Simple compent layout
       </div>
     </div>
     <!-- panel and three different parts -->
     <div class="panel panel-info">
-      <div class="panel-heading">Layout Example</div>
-      <div class="panel-body myReactCode">
+      <div class="panel-heading" data-toggle="collapse" data-target="#layoutReact">Layout Example</div>
+      <div id="layoutReact" class="panel-body myReactCode collapse">
         <p class="text-info center-block">
           import React from 'react';
           import About from './about.jsx';
@@ -71,7 +71,7 @@
           }
       </p>
       </div>
-      <div class="panel-footer">
+      <div class="panel-footer" data-toggle="collapse" data-target="#layoutReact">
         <div class="row">
           <div class="col-md-6 col-xs-6">Layout for Page</div>
           <div class="col-md-6 col-xs-6">ReactDOM will render this compent</div>
@@ -93,8 +93,8 @@
     </ul>
     <!-- tabel with of the library -->
     <div class="panel panel-info">
-      <div class="panel-heading">Parts</div>
-      <div class="panel-body">
+      <div class="panel-heading" data-toggle="collapse" data-target="#partsReact">Parts</div>
+      <div class="panel-body collapse" id="partsReact">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>

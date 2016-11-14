@@ -1,4 +1,3 @@
-/* @flow */
 import bsn from 'bootstrap.native';
 
 // by correy winke
@@ -88,27 +87,6 @@ function mover(element: any): void {
 
 	const doSomeThing: FormTest = new FormTest(element, Master.intProgressValue);
 	Master.intProgressValue = doSomeThing.blurMover();
-}
-
-// helper function for nav clikcer
-function navClickerHelper(element: any, sectionArts: any): void {
-	let intCurrentSpot: number = 0;
-
-	for (let lcv = 0; lcv < sectionArts.length; lcv++) {
-		intCurrentSpot = lcv + 2;
-
-		if ((element.classList.length === 2) && (element.classList.item(0) === `myClass${lcv}`)) {
-			// set the background of page
-			document.body.style.backgroundImage = `url("../../public/images/dkBG${intCurrentSpot}.png")`;
-			// display the correct the cotent
-			sectionArts[lcv].style.display = 'block';
-		} else if (element.classList.length === 1) {
-			// set the background of page
-			document.body.style.backgroundImage = 'url("../../public/images/dkBG2.png")';
-			// display the correct the cotent
-			sectionArts[0].style.display = 'block';
-		}
-	}
 }
 
 function imgHover(element: any) {
@@ -207,54 +185,32 @@ function navLeftOrRight(element: any, blnFlag: boolean): any {
 	return element;
 }
 
-// funcation taggered when a tab is clicked
-function navClicker(element: any): void {
-	if (element.children[0].className !== "") {
-		if (element.children[0].classList.item(1).indexOf("left") >= 0) {
-			element = navLeftOrRight(document.querySelectorAll(".active")[0], false);
-		} else {
-			element = navLeftOrRight(document.querySelectorAll(".active")[0], true);
-		}
+function main() {
+	const btn = document.querySelector("#btnHome");
+	const elmPopover = document.querySelectorAll('[data-toggle="popover"]');
+	const elmTooltip = document.querySelectorAll('[data-toggle="tooltip"]');
+
+	for(let lcv=0;lcv<elmPopover.length;lcv++) {
+		new bsn.Popover(elmPopover[lcv], {
+  		template: `<div class="popover" role="tooltip"><div class="arrow"></div>
+				<h3 class="popover-title">Not rquire</h3>
+				<div class="popover-content">But still like feedback</div></div>`
+		});
 	}
 
-  // gets the badge
-	const badNum: any = document.querySelector('.badge');
-  // gets the active tab
-	const tabActive: any = document.querySelector('.active');
-  // get all of the article that make up the body after nav
-	const sectionArts: any = document.querySelectorAll('section > article');
-  // get the figure for the animation
-	const myTarget: any = document.getElementsByClassName('target');
-
-  // add one to counter of clicks
-	Master.intClickNumber++;
-  // change that number in HTML
-	badNum.innerHTML = `${Master.intClickNumber}`;
-  // remove the active tab
-	tabActive.classList.remove('active');
-  // add the ative class to the new element
-	element.classList.add('active');
-
-  // walks thought articles after nav
-	for (let lcv = 0; lcv < sectionArts.length; lcv++) {
-    // dosn't show them
-		sectionArts[lcv].style.display = 'none';
+	for(let lcv=0;lcv<elmTooltip.length;lcv++) {
+		new bsn.Tooltip(elmTooltip[lcv], {
+  		delay: 150
+		});
 	}
 
-	navClickerHelper(element, sectionArts);
-
-  // adds the animation class
-	myTarget[0].classList.add('myAnim');
-  // after the animation is finished playing
-	setTimeout(() => {
-    // remove that class
-		myTarget[0].classList.remove('myAnim');
-    // number of milesec that the animation takes
-	}, 700);
+	btn.addEventListener('click', () => {
+		new bsn.Button(btn, 'loading');
+	});
 }
 
+main();
 // set the funcations gobal
-window.navClicker = navClicker;
 window.mover = mover;
 window.imgHover = imgHover;
 window.btnClik = btnClik;

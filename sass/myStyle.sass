@@ -8,9 +8,11 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap"
 @import "bsCustom"
 @import "footer"
+@import "aside"
 @import "base"
 
 // the darken background
+
 \:root
   --bg: #B93A32
   --navBackgroundColor: #D1F8A1
@@ -138,3 +140,26 @@ section article
 
 header > .jumbotron
   margin-top: 5em
+
+.displayMe
+  display: block !important
+
+#beforeNav
+  height: 100px
+  background-color: var(--myBlue)
+  color: #fff
+
+#socialMedia li a
+  background-color: lighten(#4C6A92, 2) !important
+  color: #fff
+
+#socialMedia .active a
+  background-color: lighten(#4C6A92, 30) !important
+  color: darken(#fff, 10)
+
+#contact
+  position: relative !important
+
+#masterNav
+  @media screen and (max-height: 330px)
+    font-size: 1rem

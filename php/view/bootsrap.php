@@ -1,7 +1,7 @@
 <!-- by Correy WInke -->
 <!-- 10/17/16 -->
 <!-- HTML is mirrored in react.php but imforamtion changed -->
-<article>
+<article id="bootsrap" class="tab-pane fade in active">
   <!-- jumbotron -->
   <div class="container">
     <header>
@@ -20,9 +20,9 @@
     </header>
     <!-- panel and its three different parts -->
     <div class="panel panel-info">
-      <div class="panel-heading">Panel</div>
-      <div class="panel-body text-info center-block">&lt;div class=&quot;panel panel-info&quot;&gt;&lt;/div&gt;</div>
-      <div class="panel-footer">
+      <div class="panel-heading" data-toggle="collapse" data-target="#panelBS">Panel</div>
+      <div class="panel-body collapse" id="panelBS">&lt;div class=&quot;panel panel-info&quot;&gt;&lt;/div&gt;</div>
+      <div class="panel-footer" data-toggle="collapse" data-target="#panelBS">
         <div class="row">
           <div class="col-md-4 col-xs-4 text-info center-block">&lt;div class=&quot;panel-heading&quot;&gt;&lt;/div&gt;</div>
           <div class="col-md-4 col-xs-4 text-info center-block">&lt;div class=&quot;panel-body&quot;&gt;&lt;/div&gt;</div>
@@ -32,8 +32,8 @@
     </div>
     <!-- panel -->
     <div class="panel panel-info">
-      <div class="panel-heading">Well</div>
-      <div class="panel-body text-info center-block">&lt;div class=&quot;well&quot;&gt;&lt;/div&gt;</div>
+      <div class="panel-heading" data-toggle="collapse" data-target="#wellBS">Well</div>
+      <div class="panel-body collapse" id="wellBS">&lt;div class=&quot;well&quot;&gt;&lt;/div&gt;</div>
     </div>
     <ul class="list-group">
       <li class="list-group-item list-group-item-info active">Libraries using Bootstrap</li>
@@ -48,8 +48,8 @@
       </li>
     </ul>
     <div class="panel panel-info">
-      <div class="panel-heading">Parts</div>
-      <div class="panel-body">
+      <div class="panel-heading" data-toggle="collapse" data-target="#partBS">Parts</div>
+      <div class="panel-body collapse" id="partBS">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>

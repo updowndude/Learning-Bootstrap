@@ -1,9 +1,8 @@
-<!-- by Correy WInke -->
-<!-- 10/17/16 -->
-
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- by Correy WInke -->
+  <!-- 10/17/16 -->
   <meta charset="UTF-8">
   <!-- by Correy WInke -->
   <!-- info to understand the page -->

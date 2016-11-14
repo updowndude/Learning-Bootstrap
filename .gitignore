@@ -50,4 +50,3 @@ jspm_packages
 
 # Custom
 php/model/db.php
-sql/db.sql

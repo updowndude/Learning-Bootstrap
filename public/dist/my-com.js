@@ -180,27 +180,6 @@
 		Master.intProgressValue = doSomeThing.blurMover();
 	}
 
-	// helper function for nav clikcer
-	function navClickerHelper(element, sectionArts) {
-		var intCurrentSpot = 0;
-
-		for (var lcv = 0; lcv < sectionArts.length; lcv++) {
-			intCurrentSpot = lcv + 2;
-
-			if (element.classList.length === 2 && element.classList.item(0) === 'myClass' + lcv) {
-				// set the background of page
-				document.body.style.backgroundImage = 'url("../../public/images/dkBG' + intCurrentSpot + '.png")';
-				// display the correct the cotent
-				sectionArts[lcv].style.display = 'block';
-			} else if (element.classList.length === 1) {
-				// set the background of page
-				document.body.style.backgroundImage = 'url("../../public/images/dkBG2.png")';
-				// display the correct the cotent
-				sectionArts[0].style.display = 'block';
-			}
-		}
-	}
-
 	function imgHover(element) {
 		// gets the image eleemnt
 		var img = document.querySelector('.media-body img');
@@ -297,54 +276,30 @@
 		return element;
 	}
 
-	// funcation taggered when a tab is clicked
-	function navClicker(element) {
-		if (element.children[0].className !== "") {
-			if (element.children[0].classList.item(1).indexOf("left") >= 0) {
-				element = navLeftOrRight(document.querySelectorAll(".active")[0], false);
-			} else {
-				element = navLeftOrRight(document.querySelectorAll(".active")[0], true);
-			}
+	function main() {
+		var btn = document.querySelector("#btnHome");
+		var elmPopover = document.querySelectorAll('[data-toggle="popover"]');
+		var elmTooltip = document.querySelectorAll('[data-toggle="tooltip"]');
+
+		for (var lcv = 0; lcv < elmPopover.length; lcv++) {
+			new _bootstrap2.default.Popover(elmPopover[lcv], {
+				template: '<div class="popover" role="tooltip"><div class="arrow"></div>\n\t\t\t\t<h3 class="popover-title">Not rquire</h3>\n\t\t\t\t<div class="popover-content">But still like feedback</div></div>'
+			});
 		}
 
-		// gets the badge
-		var badNum = document.querySelector('.badge');
-		// gets the active tab
-		var tabActive = document.querySelector('.active');
-		// get all of the article that make up the body after nav
-		var sectionArts = document.querySelectorAll('section > article');
-		// get the figure for the animation
-		var myTarget = document.getElementsByClassName('target');
-
-		// add one to counter of clicks
-		Master.intClickNumber++;
-		// change that number in HTML
-		badNum.innerHTML = '' + Master.intClickNumber;
-		// remove the active tab
-		tabActive.classList.remove('active');
-		// add the ative class to the new element
-		element.classList.add('active');
-
-		// walks thought articles after nav
-		for (var lcv = 0; lcv < sectionArts.length; lcv++) {
-			// dosn't show them
-			sectionArts[lcv].style.display = 'none';
+		for (var _lcv = 0; _lcv < elmTooltip.length; _lcv++) {
+			new _bootstrap2.default.Tooltip(elmTooltip[_lcv], {
+				delay: 150
+			});
 		}
 
-		navClickerHelper(element, sectionArts);
-
-		// adds the animation class
-		myTarget[0].classList.add('myAnim');
-		// after the animation is finished playing
-		setTimeout(function () {
-			// remove that class
-			myTarget[0].classList.remove('myAnim');
-			// number of milesec that the animation takes
-		}, 700);
+		btn.addEventListener('click', function () {
+			new _bootstrap2.default.Button(btn, 'loading');
+		});
 	}
 
+	main();
 	// set the funcations gobal
-	window.navClicker = navClicker;
 	window.mover = mover;
 	window.imgHover = imgHover;
 	window.btnClik = btnClik;
